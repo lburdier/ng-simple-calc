@@ -1,0 +1,67 @@
+.calculatrice-container {
+  background-color: #1e1e1e; /* Fond sombre */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  text-align: center;
+}
+
+.calculatrice-container form {
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+}
+
+input[type="number"], select, button {
+  width: 100%; /* Tous les champs ont la même largeur */
+  max-width: 300px; /* Largeur maximale fixe */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #2c2c2c; /* Fond sombre */
+  color: #e0e0e0; /* Texte clair */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
+}
+
+input[type="number"]:focus, select:focus, button:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+h1, h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
