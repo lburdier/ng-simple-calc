@@ -1,0 +1,55 @@
+<div class="calculatrice-container">
+  <h1>Calculatrice</h1>
+  <form [formGroup]="form" (ngSubmit)="calcul()">
+    <div>
+      <label for="operande1">Opérande 1 :</label>
+      <input
+        id="operande1"
+        formControlName="operande1"
+        type="number"
+        [class.ng-valid]="form.get('operande1')?.valid"
+        [class.ng-invalid]="form.get('operande1')?.invalid && form.get('operande1')?.touched"
+      />
+      <div *ngIf="hasError('operande1')" class="error-message">
+        <small *ngIf="form.get('operande1')?.errors?.['required']">Opérande 1 est requis.</small>
+        <small *ngIf="form.get('operande1')?.errors?.['min']">La valeur doit être supérieure ou égale à 0.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="operateur">Opérateur :</label>
+      <select
+        id="operateur"
+        formControlName="operateur"
+        [class.ng-valid]="form.get('operateur')?.valid"
+        [class.ng-invalid]="form.get('operateur')?.invalid && form.get('operateur')?.touched"
+      >
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <div *ngIf="hasError('operateur')" class="error-message">
+        <small>Un opérateur valide est requis.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="operande2">Opérande 2 :</label>
+      <input
+        id="operande2"
+        formControlName="operande2"
+        type="number"
+        [class.ng-valid]="form.get('operande2')?.valid"
+        [class.ng-invalid]="form.get('operande2')?.invalid && form.get('operande2')?.touched"
+      />
+      <div *ngIf="hasError('operande2')" class="error-message">
+        <small *ngIf="form.get('operande2')?.errors?.['required']">Opérande 2 est requis.</small>
+        <small *ngIf="form.get('operande2')?.errors?.['min']">La valeur doit être supérieure ou égale à 0.</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Calculer</button>
+    <h3>Résultat : {{ resultat }}</h3>
+  </form>
+</div>
