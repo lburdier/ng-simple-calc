@@ -1,5 +1,3 @@
-Voici la version parfaite avec toutes les informations intégrées en Markdown et respectant les règles pour les commandes `bash` :
-
 # Calculatrice
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
